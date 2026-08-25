@@ -25,11 +25,12 @@ class TradingStrategy(Strategy):
             {"NVDA": 0.33, "MSFT": 0.33, "QQQ": 0.33},  # 7 back to full (re-buys MSFT + QQQ)
             {"NVDA": 0.6,  "MSFT": 0.6},                # 8 sum=1.2 -> SDK normalizes to ~0.5/0.5
             {"NVDA": 0.33, "MSFT": 0.33, "QQQ": 0},     # 9 QQQ present-at-0: NOT an orphan (contrast w/ step 1)
+            {"AWRE": .90, "SPY": .10}                   # 10 AWRE (Non fractionable) and spy
         ]
 
     @property
     def assets(self):
-        return ["NVDA", "MSFT", "QQQ"]
+        return ["NVDA", "MSFT", "QQQ", "AWRE"]
 
     @property
     def interval(self):
