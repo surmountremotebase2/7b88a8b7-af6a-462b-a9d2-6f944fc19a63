@@ -15,16 +15,12 @@ class TradingStrategy(Strategy):
         # One entry per rebalance. Ordered so consecutive steps force the
         # transitions we want to test (deploy -> orphan -> rotate -> all-cash -> redeploy ...).
         self._shapes = [
-            {"NVDA": 0.33, "MSFT": 0.33, "QQQ": 0.33},  # 0 happy path, ~full deploy
-            {"NVDA": 0.5,  "MSFT": 0.25},               # 1 DROP QQQ (orphan) + 25% cash residual
-            {"QQQ": 1.0},                               # 2 rotate fully to QQQ (orphans NVDA + MSFT)
-            {},                                         # 3 100% cash (full liquidation)
-            {"NVDA": 0.33, "MSFT": 0.33, "QQQ": 0.33},  # 4 happy path, ~full deploy      
-            {"NVDA": 0.0},                              # 5 all cash with a 0 and orphaned tickers
-            {"NVDA": 0.4},                              # 6 40% NVDA 
-            {"NVDA": 0.33, "MSFT": 0.33, "QQQ": 0.33},  # 7 back to full (re-buys MSFT + QQQ)
-            {"NVDA": 0.6,  "MSFT": 0.6},                # 8 sum=1.2 -> SDK normalizes to ~0.5/0.5
-            {"NVDA": 0.33, "MSFT": 0.33, "QQQ": 0},     # 9 QQQ present-at-0: NOT an orphan (contrast w/ step 1)
+            {"NVDA": 0.25, "MSFT": 0.25, "AWRE": .5},
+            {"NVDA": 0.25, "MSFT": 0.25, "AWRE": .5},
+            {"NVDA": 0.25, "MSFT": 0.25, "AWRE": .5},
+            {"NVDA": 0.50, "MSFT": 0.49, "AWRE": .01},
+            {"NVDA": 0.50, "MSFT": 0.49, "AWRE": .01},
+            {"NVDA": 0.50, "MSFT": 0.49, "AWRE": .01},
         ]
 
     @property
