@@ -41,4 +41,3 @@ class TradingStrategy(Strategy):
         shape = self._shapes[self.count % len(self._shapes)]
         self.count += 1  # runner persists this after run() returns
         return TargetAllocation(shape)
-        # cache check 2026-09-11
