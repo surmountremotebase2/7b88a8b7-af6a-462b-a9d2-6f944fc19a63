@@ -11,4 +11,4 @@ class TradingStrategy(Strategy):
         return "1day"
 
     def run(self, data):
-        return TargetAllocation({"SPY": 0.95})
+        return TargetAllocation({"SPY": 0.9})
