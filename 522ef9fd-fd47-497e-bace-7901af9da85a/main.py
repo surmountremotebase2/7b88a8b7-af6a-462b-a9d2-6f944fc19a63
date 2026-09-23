@@ -1,5 +1,6 @@
 from surmount.base_class import Strategy, TargetAllocation
 
+# PG-2907 staging check 2026-09-23
 
 class TradingStrategy(Strategy):
     @property
