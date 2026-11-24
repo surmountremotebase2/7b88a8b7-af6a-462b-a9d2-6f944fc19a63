@@ -4,7 +4,7 @@ from surmount.logging import log
 
 class TradingStrategy(Strategy):
     def __init__(self):
-        self.benchmark = "AOK"
+        self.benchmark = "ZZZZZZ"
 
     @property
     def assets(self):
