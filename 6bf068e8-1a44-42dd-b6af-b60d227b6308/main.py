@@ -3,6 +3,9 @@ from surmount.logging import log
 
 
 class TradingStrategy(Strategy):
+    def __init__(self):
+        self.benchmark = "AOK"
+
     @property
     def assets(self):
         return ["BTC-USD", "SPY"]
